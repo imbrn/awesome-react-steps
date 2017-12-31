@@ -3,7 +3,6 @@ const CleanPlugin = require("clean-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
 
 module.exports = {
-
   context: path.resolve(__dirname, "examples/src"),
 
   entry: "./index.js",
@@ -28,16 +27,15 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        use: 'babel-loader'
+        use: "babel-loader"
       }
     ]
   },
 
   plugins: [
-    new CleanPlugin([ "dist", "build" ]),
+    new CleanPlugin(["dist", "build"]),
     new HtmlPlugin({
       template: "./index.html"
     })
   ]
-
 };
