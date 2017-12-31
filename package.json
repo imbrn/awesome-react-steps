@@ -1,0 +1,8 @@
+{
+  "name": "react-steps",
+  "version": "0.1.0",
+  "description": "A set of steppers components for using in react projects",
+  "main": "index.js",
+  "author": "Bruno C. Couto <brunodev02221@gmail.com>",
+  "license": "MIT"
+}
