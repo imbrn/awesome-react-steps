@@ -3,6 +3,25 @@
   "version": "0.1.0",
   "description": "A set of steppers components for using in react projects",
   "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write **/*.{js,jsx,json,md,css}",
+    "eslint": "eslint **/{src,test}/**/*.{js,jsx}",
+    "lint": "npm run prettier && npm run eslint"
+  },
   "author": "Bruno C. Couto <brunodev02221@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.14.0",
+    "eslint-plugin-react": "^7.5.1",
+    "prettier": "^1.9.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
 }
