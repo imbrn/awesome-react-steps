@@ -19,10 +19,9 @@ class Steps {
       }
     }
 
-    this._steps = steps.map(item => {
-      if (item instanceof Step) return item;
-      return new Step(item);
-    });
+    this._steps = steps.map(
+      item => (item instanceof Step ? item : new Step(item))
+    );
 
     this._current = current;
 
