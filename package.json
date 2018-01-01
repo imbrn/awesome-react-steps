@@ -19,6 +19,7 @@
   "author": "Bruno C. Couto <brunodev02221@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
