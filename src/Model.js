@@ -22,7 +22,6 @@ class Steps {
     this._steps = steps.map(
       item => (item instanceof Step ? item : new Step(item))
     );
-
     this._current = current;
 
     deepFreeze(this);
@@ -87,17 +86,16 @@ class Steps {
     return this.setSteps(steps);
   }
 
-  setCurrent(current) {
-    if (current === this._current) {
-      return this;
-    }
-    return new Steps({
-      steps: this._steps,
-      current
-    });
-  }
-
   setStepState(stepIndex, state) {
+    if (arguments.length === 0) {
+      return this;
+    } else if (arguments.length === 1) {
+      if (!isStepState(arguments[0])) {
+        return this;
+      }
+      return this.setStepState(this._current, arguments[0]);
+    }
+
     if (
       stepIndex < 0 ||
       stepIndex >= this._steps.length ||
@@ -108,6 +106,78 @@ class Steps {
 
     const newStep = this._steps[stepIndex].setState(state);
     return this.changeStep(stepIndex, newStep);
+  }
+
+  done(stepIndex) {
+    return this._applyState(stepIndex, () => StepState.DONE);
+  }
+
+  skip(stepIndex) {
+    return this._applyState(stepIndex, () => StepState.SKIPPED);
+  }
+
+  invalidate(stepIndex) {
+    return this._applyState(stepIndex, () => StepState.INVALID);
+  }
+
+  _applyState(stepIndex, fn) {
+    if (arguments.length === 0) {
+      return this;
+    }
+
+    if (arguments.length === 1) {
+      if (typeof arguments[0] === "function") {
+        return this._applyState(this._current, arguments[0]);
+      } else {
+        return this;
+      }
+    }
+
+    if (
+      arguments.length === 2 &&
+      (arguments[0] === undefined || arguments[0] === null)
+    ) {
+      return this._applyState(this._current, arguments[1]);
+    }
+
+    if (
+      typeof arguments[0] !== "number" ||
+      typeof arguments[1] !== "function"
+    ) {
+      return this;
+    }
+
+    return this.setStepState(stepIndex, fn(this));
+  }
+
+  setCurrent(current) {
+    if (current < 0) current = 0;
+    if (current >= this._steps.length) current = this._steps.length - 1;
+
+    if (current === this._current) {
+      return this;
+    }
+
+    return new Steps({
+      steps: this._steps,
+      current
+    });
+  }
+
+  advance() {
+    return this.setCurrent(this._current + 1);
+  }
+
+  next() {
+    return this.advance();
+  }
+
+  back() {
+    return this.setCurrent(this._current - 1);
+  }
+
+  previous() {
+    return this.back();
   }
 
   get size() {
@@ -140,6 +210,18 @@ class Step {
     });
   }
 
+  done() {
+    return this.setState(StepState.DONE);
+  }
+
+  skip() {
+    return this.setState(StepState.SKIPPED);
+  }
+
+  invalidate() {
+    return this.setState(StepState.INVALID);
+  }
+
   setLabel(label) {
     if (label === this._label) {
       return this;
@@ -156,6 +238,26 @@ class Step {
 
   get state() {
     return this._state;
+  }
+
+  get isUntouched() {
+    return this._state === StepState.UNTOUCHED;
+  }
+
+  get isTouched() {
+    return !this.isUntouched();
+  }
+
+  get isDone() {
+    return this._state === StepState.DONE;
+  }
+
+  get isSkipped() {
+    return this._state === StepState.SKIPPED;
+  }
+
+  get isInvalid() {
+    return this._state === StepState.INVALID;
   }
 }
 

@@ -190,6 +190,66 @@ describe("the Steps class", function() {
     expect(steps.setCurrent(5)._current).toBe(2);
   });
 
+  test("advance should return the same object if current is the last index", () => {
+    const steps = new Steps({
+      steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
+      current: 2
+    });
+
+    const sameSteps = steps.advance();
+    expect(steps).toBe(sameSteps);
+  });
+
+  test("advance should return a new object if current is not the last index", () => {
+    const steps = new Steps({
+      steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
+      current: 1
+    });
+
+    const newSteps = steps.advance();
+    expect(steps).not.toBe(newSteps);
+  });
+
+  test("advance should change current to it plus one", () => {
+    const steps = new Steps({
+      steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
+      current: 1
+    });
+
+    const newSteps = steps.advance();
+    expect(newSteps._current).toBe(steps._current + 1);
+  });
+
+  test("back should return the same object if current is the first index", () => {
+    const steps = new Steps({
+      steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
+      current: 0
+    });
+
+    const sameSteps = steps.back();
+    expect(steps).toBe(sameSteps);
+  });
+
+  test("back should return a new object is current is not the first index", () => {
+    const steps = new Steps({
+      steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
+      current: 1
+    });
+
+    const newSteps = steps.back();
+    expect(newSteps).not.toBe(steps);
+  });
+
+  test("back should change current to it minus one", () => {
+    const steps = new Steps({
+      steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
+      current: 1
+    });
+
+    const newSteps = steps.back();
+    expect(newSteps._current).toBe(steps._current - 1);
+  });
+
   test("setStepState should return the same object if there are no changes", () => {
     const steps = new Steps({
       steps: [{ label: "One", state: StepState.DONE }, { label: "Two" }]
@@ -223,6 +283,166 @@ describe("the Steps class", function() {
     expect(steps._steps[0].state).toBe(StepState.DONE);
     expect(steps._steps[1].state).toBe(StepState.SKIPPED);
   });
+
+  test("setStepState should use current as index when it is not specified", () => {
+    let steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.SKIPPED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ],
+      current: 1
+    });
+
+    steps = steps.setStepState(StepState.DONE);
+    expect(steps._steps[1]._state).toBe(StepState.DONE);
+  });
+
+  test("done should use current as index when it is not specified", () => {
+    let steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.SKIPPED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ],
+      current: 1
+    });
+
+    steps = steps.done();
+    expect(steps._steps[1]._state).toBe(StepState.DONE);
+  });
+
+  test("done should return the same object when step is already done", () => {
+    const steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.DONE },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    const sameSteps = steps.done(0);
+    expect(steps).toBe(sameSteps);
+  });
+
+  test("done should return a new object when step is not done", () => {
+    const steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.UNTOUCHED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    const newSteps = steps.done(0);
+    expect(steps).not.toBe(newSteps);
+  });
+
+  test("done should change step state to DONE", () => {
+    let steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.UNTOUCHED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    steps = steps.done(0);
+    expect(steps._steps[0].state).toBe(StepState.DONE);
+  });
+
+  test("skip should use current as index when it is not specified", () => {
+    let steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.SKIPPED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ],
+      current: 1
+    });
+
+    steps = steps.skip();
+    expect(steps._steps[1]._state).toBe(StepState.SKIPPED);
+  });
+
+  test("skip should return the same object when step is already skipped", () => {
+    const steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.SKIPPED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    const sameSteps = steps.skip(0);
+    expect(steps).toBe(sameSteps);
+  });
+
+  test("skip should return a new object when step is not skipped", () => {
+    const steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.UNTOUCHED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    const newSteps = steps.skip(0);
+    expect(steps).not.toBe(newSteps);
+  });
+
+  test("skip should change step state to skipped", () => {
+    let steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.UNTOUCHED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    steps = steps.skip(0);
+    expect(steps._steps[0].state).toBe(StepState.SKIPPED);
+  });
+
+  test("invalid should use current as index when it is not specified", () => {
+    let steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.SKIPPED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ],
+      current: 1
+    });
+
+    steps = steps.invalidate();
+    expect(steps._steps[1]._state).toBe(StepState.INVALID);
+  });
+
+  test("invalid should return the same object when step is already invalid", () => {
+    const steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.INVALID },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    const sameSteps = steps.invalidate(0);
+    expect(steps).toBe(sameSteps);
+  });
+
+  test("invalid should return a new object when step is not invalid", () => {
+    const steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.UNTOUCHED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    const newSteps = steps.invalidate(0);
+    expect(steps).not.toBe(newSteps);
+  });
+
+  test("invalid should change step state to INVALID", () => {
+    let steps = new Steps({
+      steps: [
+        { label: "One", state: StepState.UNTOUCHED },
+        { label: "Two", state: StepState.UNTOUCHED }
+      ]
+    });
+
+    steps = steps.invalidate(0);
+    expect(steps._steps[0].state).toBe(StepState.INVALID);
+  });
 });
 
 describe("the Step class", function() {
@@ -254,6 +474,57 @@ describe("the Step class", function() {
     const done = new Step({ state: StepState.DONE });
     const stillDone = done.setState(StepState.DONE);
     expect(done).toBe(stillDone);
+  });
+
+  test("done should return the same object if it is already done", () => {
+    const alreadyDone = new Step({ state: StepState.DONE });
+    const done = alreadyDone.done();
+    expect(done).toBe(alreadyDone);
+  });
+
+  test("done should return a new object if it is not done yet", () => {
+    const otherState = new Step({ state: StepState.UNTOUCHED });
+    const done = otherState.done();
+    expect(done).not.toBe(otherState);
+  });
+
+  test("done should change step state to done", () => {
+    const step = new Step({ state: StepState.UNTOUCHED });
+    expect(step.done()._state).toBe(StepState.DONE);
+  });
+
+  test("skipped should return the same object if it is already skipped", () => {
+    const alreadySkipped = new Step({ state: StepState.SKIPPED });
+    const skipped = alreadySkipped.skip();
+    expect(skipped).toBe(alreadySkipped);
+  });
+
+  test("skipped should return a new object if it is not skipped yet", () => {
+    const otherState = new Step({ state: StepState.UNTOUCHED });
+    const skipped = otherState.skip();
+    expect(skipped).not.toBe(otherState);
+  });
+
+  test("skipped should change step state to skipped", () => {
+    const step = new Step({ state: StepState.UNTOUCHED });
+    expect(step.skip()._state).toBe(StepState.SKIPPED);
+  });
+
+  test("invalid should return the same object if it is already invalid", () => {
+    const alreadyInvalid = new Step({ state: StepState.INVALID });
+    const invalid = alreadyInvalid.invalidate();
+    expect(invalid).toBe(alreadyInvalid);
+  });
+
+  test("invalid should return a new object if it is not invalid yet", () => {
+    const otherState = new Step({ state: StepState.UNTOUCHED });
+    const invalid = otherState.invalidate();
+    expect(invalid).not.toBe(otherState);
+  });
+
+  test("invalid should change step state to invalid", () => {
+    const step = new Step({ state: StepState.UNTOUCHED });
+    expect(step.invalidate()._state).toBe(StepState.INVALID);
   });
 
   test("setLabel should return a new object when change label", () => {
