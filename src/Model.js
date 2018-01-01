@@ -172,12 +172,20 @@ class Steps {
     return this.setCurrent(this._current - 1);
   }
 
+  get current() {
+    return this._current;
+  }
+
   get size() {
     return this._steps.length;
   }
 
   get length() {
     return this.size();
+  }
+
+  get steps() {
+    return this._steps;
   }
 }
 

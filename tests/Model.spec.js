@@ -38,6 +38,14 @@ describe("the Steps class", function() {
     expect(steps._steps[1]).toEqual(new Step({ label: "Two" }));
   });
 
+  test("constructs with custom current", () => {
+    const steps = new Steps({
+      steps: [{ label: "One" }, { label: "Two" }],
+      current: 1
+    });
+    expect(steps._current).toBe(1);
+  });
+
   test("is immutable", () => {
     const steps = new Steps([{ label: "One" }, { label: "Two" }]);
 
