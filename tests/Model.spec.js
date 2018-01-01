@@ -190,63 +190,63 @@ describe("the Steps class", function() {
     expect(steps.setCurrent(5)._current).toBe(2);
   });
 
-  test("advance should return the same object if current is the last index", () => {
+  test("next should return the same object if current is the last index", () => {
     const steps = new Steps({
       steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
       current: 2
     });
 
-    const sameSteps = steps.advance();
+    const sameSteps = steps.next();
     expect(steps).toBe(sameSteps);
   });
 
-  test("advance should return a new object if current is not the last index", () => {
+  test("next should return a new object if current is not the last index", () => {
     const steps = new Steps({
       steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
       current: 1
     });
 
-    const newSteps = steps.advance();
+    const newSteps = steps.next();
     expect(steps).not.toBe(newSteps);
   });
 
-  test("advance should change current to it plus one", () => {
+  test("next should change current to it plus one", () => {
     const steps = new Steps({
       steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
       current: 1
     });
 
-    const newSteps = steps.advance();
+    const newSteps = steps.next();
     expect(newSteps._current).toBe(steps._current + 1);
   });
 
-  test("back should return the same object if current is the first index", () => {
+  test("previous should return the same object if current is the first index", () => {
     const steps = new Steps({
       steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
       current: 0
     });
 
-    const sameSteps = steps.back();
+    const sameSteps = steps.previous();
     expect(steps).toBe(sameSteps);
   });
 
-  test("back should return a new object is current is not the first index", () => {
+  test("previous should return a new object is current is not the first index", () => {
     const steps = new Steps({
       steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
       current: 1
     });
 
-    const newSteps = steps.back();
+    const newSteps = steps.previous();
     expect(newSteps).not.toBe(steps);
   });
 
-  test("back should change current to it minus one", () => {
+  test("previous should change current to it minus one", () => {
     const steps = new Steps({
       steps: [{ label: "One" }, { label: "Two" }, { label: "Three" }],
       current: 1
     });
 
-    const newSteps = steps.back();
+    const newSteps = steps.previous();
     expect(newSteps._current).toBe(steps._current - 1);
   });
 

@@ -164,20 +164,12 @@ class Steps {
     });
   }
 
-  advance() {
+  next() {
     return this.setCurrent(this._current + 1);
   }
 
-  next() {
-    return this.advance();
-  }
-
-  back() {
-    return this.setCurrent(this._current - 1);
-  }
-
   previous() {
-    return this.back();
+    return this.setCurrent(this._current - 1);
   }
 
   get size() {
