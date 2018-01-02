@@ -1,4 +1,4 @@
-import { deepFreeze } from "./utils/freeze";
+import { deepFreeze } from "./freeze";
 
 class Steps {
   constructor(data) {
