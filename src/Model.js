@@ -41,8 +41,7 @@ class Steps {
   addStep(step, index = -1) {
     if (typeof step !== "object" || step === null) return this;
 
-    if (typeof step === "object" && !(step instanceof Step))
-      step = new Step(step);
+    if (!(step instanceof Step)) step = new Step(step);
 
     const steps = this._steps.slice();
 
