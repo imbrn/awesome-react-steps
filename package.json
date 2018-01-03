@@ -7,7 +7,8 @@
     "prettier": "prettier --write **/*.{js,jsx,json,md,css}",
     "eslint": "eslint **/{src,test}/**/*.{js,jsx}",
     "lint": "npm run prettier && npm run eslint",
-    "start": "webpack-dev-server --open",
+    "storybooks": "start-storybook -p 9001 -c .storybook",
+    "start": "npm run storybooks",
     "test": "jest",
     "precommit": "lint-staged",
     "prepush": "npm run eslint && npm run test"
@@ -19,17 +20,20 @@
   "author": "Bruno C. Couto <brunodev02221@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@storybook/react": "^3.3.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.14.0",
@@ -41,7 +45,6 @@
     "jest": "^22.0.4",
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.2",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "style-loader": "^0.19.1"
   }
 }
