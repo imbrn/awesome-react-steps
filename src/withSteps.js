@@ -6,17 +6,8 @@ const withSteps = Component => {
   class StepsWrapper extends React.Component {
     constructor(props) {
       super(props);
-
-      let model;
-
-      if (props.model instanceof Model) {
-        model = props.model;
-      } else {
-        model = new Model(props.model);
-      }
-
       this.state = {
-        model
+        model: this._getModelFromProps(props)
       };
 
       // Bindings
@@ -35,6 +26,24 @@ const withSteps = Component => {
       ].forEach(method => {
         this[method] = this[method].bind(this);
       });
+    }
+
+    componentWillReceiveProps(nextProps) {
+      this.setState({
+        model: this._getModelFromProps(nextProps)
+      });
+    }
+
+    _getModelFromProps(props) {
+      let model;
+
+      if (props.model instanceof Model) {
+        model = props.model;
+      } else {
+        model = new Model(props.model);
+      }
+
+      return model;
     }
 
     render() {
