@@ -44,6 +44,9 @@
     "husky": "^0.14.3",
     "jest": "^22.0.4",
     "lint-staged": "^6.0.0",
+    "postcss": "^6.0.15",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-loader": "^2.0.9",
     "prettier": "^1.9.2",
     "style-loader": "^0.19.1"
   }
