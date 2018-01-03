@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classnames from "classnames";
 import withSteps from "../withSteps";
+import Model from "../Model";
 import Step from "./Step";
 
-const Steps = ({ model, setModel, className, ...rest }) => {
+const Steps = ({ model, className }) => {
   return (
     <div className={classnames("FlowSteps", className)}>
       {model.steps.map((step, index) => (
@@ -17,6 +19,11 @@ const Steps = ({ model, setModel, className, ...rest }) => {
       ))}
     </div>
   );
+};
+
+Steps.propTypes = {
+  model: PropTypes.instanceOf(Model).isRequired,
+  className: PropTypes.string
 };
 
 export default withSteps(Steps);

@@ -53,5 +53,19 @@
 
 .FlowStep--label {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+.FlowStep__current .FlowStep--background,
+.FlowStep__passed .FlowStep--background {
+  fill: #333;
+}
+
+.FlowStep__current .FlowStep--number,
+.FlowStep__current .FlowStep--label {
+  font-weight: 600;
+}
+
+.FlowStep__coming .FlowStep--background {
+  fill: #eee;
 }

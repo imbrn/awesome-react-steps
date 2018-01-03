@@ -1,15 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import FlowSteps from "../src/flow";
-import "../src/flow/Steps.css";
+import FlowSteps from "./FlowSteps";
 
-storiesOf("FlowSteps", module).add("default", () => (
-  <FlowSteps
-    model={[
-      { label: "First second" },
-      { label: "Step two" },
-      { label: "Step three" },
-      { label: "Final step" }
-    ]}
-  />
-));
+storiesOf("FlowSteps", module).add("default", () => <FlowSteps />);

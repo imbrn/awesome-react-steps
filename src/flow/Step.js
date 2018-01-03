@@ -1,5 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classnames from "classnames";
+import Model from "../Model";
 
 const Step = ({ model, step, index, className, ...rest }) => {
   const drawBackground = () => {
@@ -14,9 +16,14 @@ const Step = ({ model, step, index, className, ...rest }) => {
     }
   };
 
+  const stepStateClass =
+    index === model.current
+      ? "FlowStep__current"
+      : index < model.current ? "FlowStep__passed" : "FlowStep__coming";
+
   return (
     <div
-      className={classnames("FlowStep", className)}
+      className={classnames("FlowStep", stepStateClass, className)}
       style={{ marginLeft: -10 }}
       {...rest}
     >
@@ -36,6 +43,13 @@ const Step = ({ model, step, index, className, ...rest }) => {
       </div>
     </div>
   );
+};
+
+Step.propTypes = {
+  model: PropTypes.instanceOf(Model).isRequired,
+  step: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  className: PropTypes.string
 };
 
 export default Step;
