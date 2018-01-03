@@ -1,4 +1,4 @@
-import { deepFreeze } from "./freeze";
+import { deepFreeze } from './freeze';
 
 class Steps {
   constructor(data) {
@@ -12,7 +12,7 @@ class Steps {
     } else {
       steps = data.steps && Array.isArray(data.steps) ? data.steps.slice() : [];
 
-      if (data.current && typeof data.current === "number") {
+      if (data.current && typeof data.current === 'number') {
         if (data.current < 0) current = 0;
         else if (data.current >= steps.length) current = steps.length - 1;
         else current = data.current;
@@ -39,7 +39,7 @@ class Steps {
   }
 
   addStep(step, index = -1) {
-    if (typeof step !== "object" || step === null) return this;
+    if (typeof step !== 'object' || step === null) return this;
 
     if (!(step instanceof Step)) step = new Step(step);
 
@@ -125,7 +125,7 @@ class Steps {
     }
 
     if (arguments.length === 1) {
-      if (typeof arguments[0] === "function") {
+      if (typeof arguments[0] === 'function') {
         return this._applyState(this._current, arguments[0]);
       } else {
         return this;
@@ -140,8 +140,8 @@ class Steps {
     }
 
     if (
-      typeof arguments[0] !== "number" ||
-      typeof arguments[1] !== "function"
+      typeof arguments[0] !== 'number' ||
+      typeof arguments[1] !== 'function'
     ) {
       return this;
     }
@@ -191,7 +191,7 @@ class Steps {
 class Step {
   constructor(data) {
     this._label =
-      data && data.label && typeof data.label === "string" ? data.label : "";
+      data && data.label && typeof data.label === 'string' ? data.label : '';
     this._state =
       data && data.state && isStepState(data.state)
         ? data.state

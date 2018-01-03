@@ -1,124 +1,124 @@
-import React from "react";
-import withSteps from "../src/withSteps";
-import Model, { StepState } from "../src/Model";
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import React from 'react';
+import withSteps from '../src/withSteps';
+import Model, { StepState } from '../src/Model';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("the withSteps high-order component", () => {
+describe('the withSteps high-order component', () => {
   let Steps;
 
   beforeEach(() => {
     Steps = withSteps(MockSteps);
   });
 
-  test("accept props model to be an array", () => {
+  test('accept props model to be an array', () => {
     const wrapper = mount(
-      <Steps model={[{ label: "One" }, { label: "Two" }, { label: "Three" }]} />
+      <Steps model={[{ label: 'One' }, { label: 'Two' }, { label: 'Three' }]} />
     );
-    expect(wrapper.find("#steps .size").text()).toBe("3");
+    expect(wrapper.find('#steps .size').text()).toBe('3');
   });
 
-  test("accept props model to be an Model intance", () => {
+  test('accept props model to be an Model intance', () => {
     const wrapper = mount(
       <Steps
         model={
-          new Model([{ label: "One" }, { label: "Two" }, { label: "Three" }])
+          new Model([{ label: 'One' }, { label: 'Two' }, { label: 'Three' }])
         }
       />
     );
-    expect(wrapper.find("#steps .size").text()).toBe("3");
+    expect(wrapper.find('#steps .size').text()).toBe('3');
   });
 
-  test("undefined props model will initialize with an empty model", () => {
+  test('undefined props model will initialize with an empty model', () => {
     const wrapper = mount(<Steps />);
-    expect(wrapper.find("#steps .size").text()).toBe("0");
+    expect(wrapper.find('#steps .size').text()).toBe('0');
   });
 
-  test("advance should work correctly", () => {
+  test('advance should work correctly', () => {
     const wrapper = mount(
-      <Steps model={[{ label: "One" }, { label: "Two" }]} />
+      <Steps model={[{ label: 'One' }, { label: 'Two' }]} />
     );
 
-    expect(wrapper.find("#steps .current").text()).toBe("0");
-    wrapper.find("#steps .next-btn").simulate("click");
-    expect(wrapper.find("#steps .current").text()).toBe("1");
+    expect(wrapper.find('#steps .current').text()).toBe('0');
+    wrapper.find('#steps .next-btn').simulate('click');
+    expect(wrapper.find('#steps .current').text()).toBe('1');
   });
 
-  test("back should work correctly", () => {
+  test('back should work correctly', () => {
     const wrapper = mount(
       <Steps
         model={
           new Model({
-            steps: [{ label: "One" }, { label: "Two" }],
+            steps: [{ label: 'One' }, { label: 'Two' }],
             current: 1
           })
         }
       />
     );
 
-    expect(wrapper.find("#steps .current").text()).toBe("1");
-    wrapper.find("#steps .previous-btn").simulate("click");
-    expect(wrapper.find("#steps .current").text()).toBe("0");
+    expect(wrapper.find('#steps .current').text()).toBe('1');
+    wrapper.find('#steps .previous-btn').simulate('click');
+    expect(wrapper.find('#steps .current').text()).toBe('0');
   });
 
-  test("done should work", () => {
+  test('done should work', () => {
     const wrapper = mount(
       <Steps
         model={
           new Model({
-            steps: [{ label: "One" }, { label: "Two" }]
+            steps: [{ label: 'One' }, { label: 'Two' }]
           })
         }
       />
     );
 
-    expect(wrapper.find("#steps .steps .step-0 .state").text()).toBe(
+    expect(wrapper.find('#steps .steps .step-0 .state').text()).toBe(
       StepState.UNTOUCHED.toString()
     );
-    wrapper.find("#steps .done-btn").simulate("click");
-    expect(wrapper.find("#steps .steps .step-0 .state").text()).toBe(
+    wrapper.find('#steps .done-btn').simulate('click');
+    expect(wrapper.find('#steps .steps .step-0 .state').text()).toBe(
       StepState.DONE.toString()
     );
   });
 
-  test("skip should work", () => {
+  test('skip should work', () => {
     const wrapper = mount(
       <Steps
         model={
           new Model({
-            steps: [{ label: "One" }, { label: "Two" }]
+            steps: [{ label: 'One' }, { label: 'Two' }]
           })
         }
       />
     );
 
-    expect(wrapper.find("#steps .steps .step-0 .state").text()).toBe(
+    expect(wrapper.find('#steps .steps .step-0 .state').text()).toBe(
       StepState.UNTOUCHED.toString()
     );
-    wrapper.find("#steps .skip-btn").simulate("click");
-    expect(wrapper.find("#steps .steps .step-0 .state").text()).toBe(
+    wrapper.find('#steps .skip-btn').simulate('click');
+    expect(wrapper.find('#steps .steps .step-0 .state').text()).toBe(
       StepState.SKIPPED.toString()
     );
   });
 
-  test("invalidate should work", () => {
+  test('invalidate should work', () => {
     const wrapper = mount(
       <Steps
         model={
           new Model({
-            steps: [{ label: "One" }, { label: "Two" }]
+            steps: [{ label: 'One' }, { label: 'Two' }]
           })
         }
       />
     );
 
-    expect(wrapper.find("#steps .steps .step-0 .state").text()).toBe(
+    expect(wrapper.find('#steps .steps .step-0 .state').text()).toBe(
       StepState.UNTOUCHED.toString()
     );
-    wrapper.find("#steps .invalidate-btn").simulate("click");
-    expect(wrapper.find("#steps .steps .step-0 .state").text()).toBe(
+    wrapper.find('#steps .invalidate-btn').simulate('click');
+    expect(wrapper.find('#steps .steps .step-0 .state').text()).toBe(
       StepState.INVALID.toString()
     );
   });

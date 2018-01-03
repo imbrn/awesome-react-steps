@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Model from "./Model";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Model from './Model';
 
 const withSteps = Component => {
   class StepsWrapper extends React.Component {
@@ -21,17 +21,17 @@ const withSteps = Component => {
 
       // Bindings
       [
-        "setModel",
-        "next",
-        "advance",
-        "previous",
-        "back",
-        "setCurrent",
-        "jumpTo",
-        "setStepState",
-        "done",
-        "skip",
-        "invalidate"
+        'setModel',
+        'next',
+        'advance',
+        'previous',
+        'back',
+        'setCurrent',
+        'jumpTo',
+        'setStepState',
+        'done',
+        'skip',
+        'invalidate'
       ].forEach(method => {
         this[method] = this[method].bind(this);
       });
