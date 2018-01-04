@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import withSteps from "../withSteps";
 import Model from "../Model";
 import Step from "./Step";
 
@@ -26,4 +25,4 @@ Steps.propTypes = {
   className: PropTypes.string
 };
 
-export default withSteps(Steps);
+export default Steps;
