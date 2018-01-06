@@ -20,7 +20,7 @@ describe("the withSteps high-order component", () => {
     expect(wrapper.find("#steps .size").text()).toBe("3");
   });
 
-  test("accept props model to be an Model intance", () => {
+  test("accept props model to be an Model instance", () => {
     const wrapper = mount(
       <Steps
         model={
