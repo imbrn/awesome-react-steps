@@ -21,7 +21,9 @@ class SvgLabel extends Component {
   }
 
   componentDidMount() {
-    this.lineHeight = parseInt(this.labelRef.style.fontSize.replace("px", ""));
+    this.lineHeight = parseInt(
+      window.getComputedStyle(this.labelRef).fontSize.replace("px", "")
+    );
 
     const lines = this.breakLines();
     const height = lines.length * this.labelRef.getBBox().height;
