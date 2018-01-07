@@ -91,7 +91,7 @@ SvgLabel.propTypes = {
   y: PropTypes.number,
   width: PropTypes.number,
   verticalAlign: PropTypes.oneOf(["hanging", "middle", "baseline"]),
-  children: PropTypes.string
+  children: PropTypes.node
 };
 
 export default SvgLabel;
