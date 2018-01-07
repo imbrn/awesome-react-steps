@@ -1,5 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import FlowSteps from "./FlowSteps";
+import Arrows from "./Arrows";
 
-storiesOf("FlowSteps", module).add("default", () => <FlowSteps />);
+storiesOf("Arrows", module).add("default", () => <Arrows />);

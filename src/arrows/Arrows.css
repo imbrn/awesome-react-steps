@@ -1,0 +1,18 @@
+.FlowSteps {
+  display: flex;
+  height: 60px;
+  background: linear-gradient(to right, #24d191, #30b2f3);
+}
+
+.FlowSteps--svg--background {
+  fill: transparent;
+}
+
+.FlowStep--number,
+.FlowStep--label {
+  font-size: 4px;
+}
+
+.FlowStep--number {
+  font-size: 8px;
+}
