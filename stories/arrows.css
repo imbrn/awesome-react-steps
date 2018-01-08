@@ -1,0 +1,14 @@
+.CustomArrows {
+  background: linear-gradient(to right, rgb(0, 162, 255), rgb(0, 61, 99));
+}
+
+.CustomArrows .Arrows--step__passed .Arrows--step--arrow {
+  fill: rgb(214, 249, 255);
+}
+.CustomArrows .Arrows--step__passed .Arrows--step--number {
+  color: rgb(0, 61, 99);
+  opacity: 1;
+}
+.CustomArrows .Arrows--step__passed .Arrows--step--label {
+  color: rgb(0, 61, 99);
+}

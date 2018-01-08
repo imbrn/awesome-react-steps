@@ -1,18 +1,65 @@
-.FlowSteps {
+.Arrows {
   display: flex;
+  justify-content: center;
   height: 60px;
   background: linear-gradient(to right, #24d191, #30b2f3);
 }
 
-.FlowSteps--svg--background {
-  fill: transparent;
+.Arrows--step {
+  flex-basis: 0;
+  flex-grow: 1;
+  position: relative;
+  max-width: 200px;
 }
 
-.FlowStep--number,
-.FlowStep--label {
-  font-size: 4px;
+.Arrows--step--arrow,
+.Arrows--step--content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.FlowStep--number {
-  font-size: 8px;
+.Arrows--step--content {
+  box-sizing: border-box;
+  display: flex;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Arrows--step--number {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+.Arrows--step--number::after {
+  content: ".";
+  margin-right: 4px;
+}
+
+.Arrows--step--label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.Arrows--step__current .Arrows--step--arrow {
+  fill: #fff;
+}
+.Arrows--step__current .Arrows--step--label {
+  color: #000;
+  opacity: 0.5;
+}
+
+@media (min-width: 540px) {
+  .Arrows--step--number {
+    font-size: 1.5rem;
+  }
+
+  .Arrows--step--label {
+    font-size: 0.9rem;
+  }
 }

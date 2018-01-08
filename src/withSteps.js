@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Model from "./Model";
 
 const withSteps = Component => {
@@ -123,10 +122,6 @@ const withSteps = Component => {
       this.setModel(this.state.model.invalidate(stepIndex));
     }
   }
-
-  StepsWrapper.propTypes = {
-    model: PropTypes.oneOfType([PropTypes.array, PropTypes.instanceOf(Model)])
-  };
 
   return StepsWrapper;
 };
