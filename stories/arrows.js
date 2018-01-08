@@ -1,9 +1,9 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Arrows from "../src/arrows";
-import "../src/arrows/Arrows.css";
+import "../styles/arrows.css";
 import "./arrows.css";
-import Model from "../src/Model";
+import Model from "../src/model";
 
 storiesOf("Arrows", module).add("default", () => (
   <Arrows

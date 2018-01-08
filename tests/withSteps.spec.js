@@ -1,6 +1,6 @@
 import React from "react";
 import withSteps from "../src/withSteps";
-import Model, { StepState } from "../src/Model";
+import Model, { StepState } from "../src/model";
 import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 

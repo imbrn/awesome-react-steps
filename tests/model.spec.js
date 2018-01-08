@@ -1,4 +1,4 @@
-import Steps, { Step, StepState } from "../src/Model";
+import Steps, { Step, StepState } from "../src/model";
 
 describe("the Steps class", function() {
   test("constructs with no parameters", () => {
