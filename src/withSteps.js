@@ -1,5 +1,5 @@
 import React from "react";
-import Model from "./Model";
+import Model from "./model";
 
 const withSteps = Component => {
   class StepsWrapper extends React.Component {
