@@ -26,7 +26,10 @@
     "prepush": "yarn eslint && yarn test "
   },
   "lint-staged": {
-    "**/{src,styles,test}/**/*.{js,jsx,json,css}": ["prettier --write", "git add"],
+    "**/{src,styles,test}/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ],
     "**/{src,test}/**/*.{js,jsx}": ["eslint", "git add"]
   },
   "author": "Bruno C. Couto <brunodev02221@gmail.com>",

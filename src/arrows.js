@@ -28,7 +28,7 @@ const Arrows = ({
             {index + 1}
           </span>
           <span
-            stye={labelStyle}
+            style={labelStyle}
             className={classnames("Arrows--step--label", labelClassName)}
           >
             {step.label}

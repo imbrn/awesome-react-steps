@@ -1970,7 +1970,7 @@ var Arrows = function Arrows(_ref) {
         react.createElement(
           "span",
           {
-            stye: labelStyle,
+            style: labelStyle,
             className: classnames("Arrows--step--label", labelClassName)
           },
           step.label
