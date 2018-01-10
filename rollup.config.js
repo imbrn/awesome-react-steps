@@ -21,7 +21,6 @@ export default [
   {
     input: "src/index.js",
     output: {
-      name: "react-steps",
       file: "dist/react-steps.es.js",
       format: "es"
     },
@@ -36,7 +35,7 @@ export default [
   {
     input: "src/index.js",
     output: {
-      name: "react-steps",
+      name: "Steps",
       file: "dist/react-steps.js",
       format: "umd"
     },
@@ -51,7 +50,7 @@ export default [
   {
     input: "src/index.js",
     output: {
-      name: "react-steps",
+      name: "Steps",
       file: "dist/react-steps.min.js",
       format: "umd"
     },
