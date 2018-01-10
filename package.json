@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "A set of steppers components for using in react projects",
   "main": "lib/js/index.js",
+  "keywords": [
+    "stepper", "wizard", "component", "react"
+  ],
   "scripts": {
     "prettier": "prettier --write **/*.{js,jsx,json,md,css}",
     "eslint": "eslint **/{src,test}/**/*.{js,jsx}",
