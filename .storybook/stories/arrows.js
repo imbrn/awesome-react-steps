@@ -24,16 +24,14 @@ storiesOf("Arrows", module).add("default", () => (
 storiesOf("Arrows", module).add("custom style", () => (
   <Arrows
     className="CustomArrows"
-    model={
-      new Model({
-        steps: [
-          { label: "First step" },
-          { label: "Step two" },
-          { label: "Step three" },
-          { label: "Final step" }
-        ],
-        current: 1
-      })
-    }
+    model={{
+      steps: [
+        { label: "First step" },
+        { label: "Step two" },
+        { label: "Step three" },
+        { label: "Final step" }
+      ],
+      current: 1
+    }}
   />
 ));

@@ -39,7 +39,7 @@ const Arrows = ({
     );
   };
 
-  if (Array.isArray(model)) {
+  if (!(model instanceof Model)) {
     model = new Model(model);
   }
 
