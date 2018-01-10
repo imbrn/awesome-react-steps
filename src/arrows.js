@@ -1,4 +1,5 @@
 import React from "react";
+import Model from "./model";
 import classnames from "classnames";
 import uniqueId from "lodash.uniqueid";
 
@@ -37,6 +38,10 @@ const Arrows = ({
       </div>
     );
   };
+
+  if (Array.isArray(model)) {
+    model = new Model(model);
+  }
 
   return (
     <div {...rest} className={classnames("Arrows", className)}>

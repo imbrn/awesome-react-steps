@@ -16,7 +16,8 @@
     "lib": "yarn lib:clean && yarn lib:js && yarn lib:css",
     "dist:clean": "rimraf dist",
     "dist:js": "rollup -c",
-    "dist:css:min": "postcss styles/**/*.css -o dist/react.steps.min.css --use cssnano",
+    "dist:css:min":
+      "postcss styles/**/*.css -o dist/react.steps.min.css --use cssnano",
     "dist:css:full": "postcss styles/**/*.css -o dist/react.steps.css",
     "dist:css": "yarn dist:css:min && yarn dist:css:full",
     "dist": "yarn dist:clean && yarn dist:js && yarn dist:css",
@@ -29,10 +30,7 @@
       "prettier --write",
       "git add"
     ],
-    "**/{src,test}/**/*.{js,jsx}": [
-      "eslint",
-      "git add"
-    ]
+    "**/{src,test}/**/*.{js,jsx}": ["eslint", "git add"]
   },
   "author": "Bruno C. Couto <brunodev02221@gmail.com>",
   "license": "MIT",

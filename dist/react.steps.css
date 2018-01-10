@@ -3,19 +3,25 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: 60px;
-  background: -webkit-gradient(linear, left top, right top, from(#24d191), to(#30b2f3));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#24d191),
+    to(#30b2f3)
+  );
   background: linear-gradient(to right, #24d191, #30b2f3);
 }
 
 .Arrows--step {
   -ms-flex-preferred-size: 0;
-      flex-basis: 0;
+  flex-basis: 0;
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   position: relative;
   max-width: 200px;
 }
@@ -31,17 +37,17 @@
 
 .Arrows--step--content {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0 20px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .Arrows--step--number {
