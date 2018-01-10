@@ -6,6 +6,10 @@
   "keywords": [
     "stepper", "wizard", "component", "react"
   ],
+  "files": [
+    "lib",
+    "dist"
+  ],
   "scripts": {
     "prettier": "prettier --write **/*.{js,jsx,json,md,css}",
     "eslint": "eslint **/{src,test}/**/*.{js,jsx}",
