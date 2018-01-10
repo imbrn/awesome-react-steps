@@ -17,13 +17,13 @@
     "dist:clean": "rimraf dist",
     "dist:js": "rollup -c",
     "dist:css:min":
-      "postcss styles/**/*.css -o dist/react.steps.min.css --use cssnano",
-    "dist:css:full": "postcss styles/**/*.css -o dist/react.steps.css",
+      "postcss styles/**/*.css -o dist/react-steps.min.css --use cssnano",
+    "dist:css:full": "postcss styles/**/*.css -o dist/react-steps.css",
     "dist:css": "yarn dist:css:min && yarn dist:css:full",
     "dist": "yarn dist:clean && yarn dist:js && yarn dist:css",
     "build": "yarn test && yarn lib && yarn dist",
     "precommit": "lint-staged",
-    "prepush": "yarn eslint && yarn test "
+    "prepush": "yarn test"
   },
   "lint-staged": {
     "**/{src,styles,test}/**/*.{js,jsx,json,css}": [
