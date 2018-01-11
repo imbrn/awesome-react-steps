@@ -142,7 +142,7 @@ The classes for the states of the stepper. You can combine these one with the cl
 ```css
 .Arrows--step__current /* Current step */
 .Arrows--step__passed /* Steps before the current step */
-.Arrows--step__coming; /* Steps after the current step */
+.Arrows--step__coming /* Steps after the current step */
 ```
 
 > We haven't implemented classes for step states in the Arrows stepper component.
