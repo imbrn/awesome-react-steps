@@ -36,6 +36,21 @@ storiesOf("Arrows", module).add("blue style", () => (
   />
 ));
 
+storiesOf("Arrows", module).add("red style", () => (
+  <Arrows
+    style={{ background: "darkred" }}
+    model={{
+      steps: [
+        { label: "First step" },
+        { label: "Step two" },
+        { label: "Step three" },
+        { label: "Final step" }
+      ],
+      current: 1
+    }}
+  />
+));
+
 storiesOf("Arrows", module).add("yellow/pink style", () => (
   <Arrows
     className="PinkArrows"
