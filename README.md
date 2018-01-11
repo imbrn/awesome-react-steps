@@ -137,7 +137,7 @@ The classes used for each part of the stepper:
 .Arrows--step--label
 ```
 
-The classes for the states of the stepper. You can combine these one with the classes of the stepper parts to custom the rendering style for differnt states of the stepper.
+The classes for the states of the stepper. You can combine these one with the classes of the stepper parts to custom the rendering style for different states of the stepper.
 
 ```css
 .Arrows--step__current /* Current step */
