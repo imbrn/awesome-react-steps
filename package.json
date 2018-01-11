@@ -43,6 +43,10 @@
   },
   "author": "Bruno C. Couto <brunodev02221@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bruno02221/awesome-react-steps"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash.uniqueid": "^4.0.1",
