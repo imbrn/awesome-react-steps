@@ -2377,6 +2377,7 @@ var SvgArrow = function SvgArrow(_ref2) {
 
 exports.Arrows = Arrows;
 exports.Model = Steps;
+exports.StepState = StepState;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

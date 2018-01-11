@@ -2369,4 +2369,4 @@ var SvgArrow = function SvgArrow(_ref2) {
   );
 };
 
-export { Arrows, Steps as Model };
+export { Arrows, Steps as Model, StepState };
