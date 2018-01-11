@@ -1,6 +1,6 @@
 {
   "name": "awesome-react-steps",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A set of steppers components for using in react projects",
   "main": "lib/js/index.js",
   "keywords": [
@@ -24,8 +24,8 @@
     "dist:clean": "rimraf dist",
     "dist:js": "rollup -c",
     "dist:css:min":
-      "postcss styles/**/*.css -o dist/react-steps.min.css --use cssnano",
-    "dist:css:full": "postcss styles/**/*.css -o dist/react-steps.css",
+      "postcss styles/**/*.css -o dist/awesome-react-steps.min.css --use cssnano",
+    "dist:css:full": "postcss styles/**/*.css -o dist/awesome-react-steps.css",
     "dist:css": "yarn dist:css:min && yarn dist:css:full",
     "dist": "yarn dist:clean && yarn dist:js && yarn dist:css",
     "build": "yarn test && yarn lib && yarn dist",
