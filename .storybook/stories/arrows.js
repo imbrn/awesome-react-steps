@@ -21,9 +21,39 @@ storiesOf("Arrows", module).add("default", () => (
   />
 ));
 
-storiesOf("Arrows", module).add("custom style", () => (
+storiesOf("Arrows", module).add("blue style", () => (
   <Arrows
-    className="CustomArrows"
+    className="BlueArrows"
+    model={{
+      steps: [
+        { label: "First step" },
+        { label: "Step two" },
+        { label: "Step three" },
+        { label: "Final step" }
+      ],
+      current: 1
+    }}
+  />
+));
+
+storiesOf("Arrows", module).add("yellow/pink style", () => (
+  <Arrows
+    className="PinkArrows"
+    model={{
+      steps: [
+        { label: "First step" },
+        { label: "Step two" },
+        { label: "Step three" },
+        { label: "Final step" }
+      ],
+      current: 1
+    }}
+  />
+));
+
+storiesOf("Arrows", module).add("dark style", () => (
+  <Arrows
+    className="DarkArrows"
     model={{
       steps: [
         { label: "First step" },

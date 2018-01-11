@@ -1,14 +1,51 @@
-.CustomArrows {
-  background: linear-gradient(to right, rgb(0, 162, 255), rgb(0, 61, 99));
+.BlueArrows {
+  background: linear-gradient(to right, rgb(156, 219, 255), rgb(88, 166, 255));
 }
-
-.CustomArrows .Arrows--step__passed .Arrows--step--arrow {
+.BlueArrows .Arrows--step__passed .Arrows--step--arrow {
   fill: rgb(214, 249, 255);
 }
-.CustomArrows .Arrows--step__passed .Arrows--step--number {
+.BlueArrows .Arrows--step__passed .Arrows--step--number {
   color: rgb(0, 61, 99);
   opacity: 1;
 }
-.CustomArrows .Arrows--step__passed .Arrows--step--label {
+.BlueArrows .Arrows--step__passed .Arrows--step--label {
   color: rgb(0, 61, 99);
+}
+
+
+.PinkArrows {
+  background: linear-gradient(to right, gold, pink);
+}
+.PinkArrows .Arrows--step--number {
+  opacity: 0.75;
+}
+.PinkArrows .Arrows--step--label {
+  opacity: 0.4;
+  color: black;
+}
+.PinkArrows .Arrows--step__current .Arrows--step--label {
+  opacity: 0.5;
+}
+
+.DarkArrows {
+  background: linear-gradient(to right, rgb(61, 61, 61), rgb(32, 32, 32));
+}
+.DarkArrows .Arrows--step--arrow {
+  fill: #fff1;
+}
+.DarkArrows .Arrows--step--number {
+  color: #fff;
+  opacity: 0.9;
+}
+.DarkArrows .Arrows--step--label {
+  color: #fff;
+  opacity: 0.75;
+}
+.DarkArrows .Arrows--step__current .Arrows--step--arrow {
+  fill: #fff;
+}
+.DarkArrows .Arrows--step__current .Arrows--step--number,
+.DarkArrows .Arrows--step__current .Arrows--step--label {
+  color: #000;
+  opacity: 0.5;
 }
