@@ -4,16 +4,16 @@
   "description": "A set of steppers components for using in react projects",
   "main": "lib/js/index.js",
   "keywords": [
-    "stepper", "wizard", "component", "react"
+    "stepper",
+    "wizard",
+    "component",
+    "react"
   ],
   "files": [
     "lib",
     "dist"
   ],
   "scripts": {
-    "prettier": "prettier --write **/*.{js,jsx,json,md,css}",
-    "eslint": "eslint **/{src,test}/**/*.{js,jsx}",
-    "lint": "npm run prettier && npm run eslint",
     "storybooks": "start-storybook -p 9001 -c .storybook",
     "start": "npm run storybooks",
     "test": "jest",
@@ -23,8 +23,7 @@
     "lib": "yarn lib:clean && yarn lib:js && yarn lib:css",
     "dist:clean": "rimraf dist",
     "dist:js": "rollup -c",
-    "dist:css:min":
-      "postcss styles/**/*.css -o dist/awesome-react-steps.min.css --use cssnano",
+    "dist:css:min": "postcss styles/**/*.css -o dist/awesome-react-steps.min.css --use cssnano",
     "dist:css:full": "postcss styles/**/*.css -o dist/awesome-react-steps.css",
     "dist:css": "yarn dist:css:min && yarn dist:css:full",
     "dist": "yarn dist:clean && yarn dist:js && yarn dist:css",
@@ -37,7 +36,10 @@
       "prettier --write",
       "git add"
     ],
-    "**/{src,test}/**/*.{js,jsx}": ["eslint", "git add"]
+    "**/{src,test}/**/*.{js,jsx}": [
+      "eslint",
+      "git add"
+    ]
   },
   "author": "Bruno C. Couto <brunodev02221@gmail.com>",
   "license": "MIT",
