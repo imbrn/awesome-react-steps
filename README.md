@@ -22,7 +22,7 @@ npm install awesome-react-steps
 yarn add awesome-react-steps
 ```
 
-Import the stepper you want, its styles and the model class.
+Import the stepper you want, its styles, and the model class.
 
 > We have implemented only the Arrows stepper, but more steppers will be available soon. :)
 
@@ -110,7 +110,7 @@ import { StepState } from "awesome-react-steps";
 // The following states are available
 StepState.UNTOUCHED;
 StepState.DONE;
-StepState.SKIPPD;
+StepState.SKIPPED;
 StepState.INVALID;
 ```
 
