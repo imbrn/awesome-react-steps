@@ -1,6 +1,6 @@
 {
   "name": "awesome-react-steps",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A set of steppers components for using in react projects",
   "main": "lib/js/index.js",
   "keywords": [
