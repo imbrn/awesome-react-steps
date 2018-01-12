@@ -261,10 +261,10 @@ class Step {
 }
 
 const StepState = {
-  UNTOUCHED: 0,
-  DONE: 1,
-  INVALID: 2,
-  SKIPPED: 3
+  UNTOUCHED: "untouched",
+  DONE: "done",
+  INVALID: "invalid",
+  SKIPPED: "skipped"
 };
 
 function isStepState(value) {
