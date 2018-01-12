@@ -12,7 +12,7 @@ A set of steppers components for you to use in your react projects.
 ![custom dark](./docs/screenshots/arrows/dark.png)
 ![custom dark](./docs/screenshots/arrows/red.png)
 
-## Quickest usage
+## Quick usage
 
 The quickest way for you to use a stepper component in your project is by using a package manager to install it, and a ES6 ready environment.
 
