@@ -1,2 +1,2 @@
 export { default as Arrows } from "./arrows";
-export { default as Model, StepState } from "./model";
+export { default as StepsModel, StepState } from "./model";
