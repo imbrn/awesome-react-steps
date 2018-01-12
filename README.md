@@ -50,10 +50,34 @@ import { Arrows } from "awesome-react-steps";
 
 ## API
 
-### Model class
+### StepsModel class
 
 ```js
-import { Model } from "awesome-react-steps";
+import { StepsModel } from "awesome-react-steps";
+```
+
+#### Constructing
+
+Intially empty and populating it later:
+
+```js
+let model = new StepsModel();
+model = model.addStep({ label: "First step" });
+```
+
+With an array of steps:
+
+```js
+const model = new StepsModel([{ label: "First step" }, { label: "Last step" }]);
+```
+
+With an object:
+
+```js
+const model = new StepsModel({
+  steps: [{ label: "One step" }, { label: "Other step" }],
+  current: 1
+});
 ```
 
 #### Setting step states
