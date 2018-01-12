@@ -2066,10 +2066,10 @@ var Step = function () {
 }();
 
 var StepState = {
-  UNTOUCHED: 0,
-  DONE: 1,
-  INVALID: 2,
-  SKIPPED: 3
+  UNTOUCHED: "untouched",
+  DONE: "done",
+  INVALID: "invalid",
+  SKIPPED: "skipped"
 };
 
 function isStepState(value) {
@@ -2369,4 +2369,4 @@ var SvgArrow = function SvgArrow(_ref2) {
   );
 };
 
-export { Arrows, Steps as Model, StepState };
+export { Arrows, Steps as StepsModel, StepState };

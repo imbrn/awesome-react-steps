@@ -2072,10 +2072,10 @@ var Step = function () {
 }();
 
 var StepState = {
-  UNTOUCHED: 0,
-  DONE: 1,
-  INVALID: 2,
-  SKIPPED: 3
+  UNTOUCHED: "untouched",
+  DONE: "done",
+  INVALID: "invalid",
+  SKIPPED: "skipped"
 };
 
 function isStepState(value) {
@@ -2376,7 +2376,7 @@ var SvgArrow = function SvgArrow(_ref2) {
 };
 
 exports.Arrows = Arrows;
-exports.Model = Steps;
+exports.StepsModel = Steps;
 exports.StepState = StepState;
 
 Object.defineProperty(exports, '__esModule', { value: true });
