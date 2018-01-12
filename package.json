@@ -37,6 +37,10 @@
       "prettier --write",
       "git add"
     ],
+    "README.md": [
+      "prettier --write",
+      "git add"
+    ],
     "**/{src,test}/**/*.{js,jsx}": [
       "eslint",
       "git add"
