@@ -2300,7 +2300,7 @@ var Arrows = function Arrows(_ref) {
       rest = objectWithoutProperties(_ref, ["model", "className", "numberStyle", "numberClassName", "labelStyle", "labelClassName"]);
 
   var renderStep = function renderStep(step, index) {
-    var modifiersClasses = classnames(model.current === index && "Arrows--step__current", model.current > index && "Arrows--step__passed", model.current < index && "Arrows--step__coming");
+    var modifiersClasses = classnames(model.current === index && "Arrows--step__current", model.current > index && "Arrows--step__passed", model.current < index && "Arrows--step__coming", step.state === StepState.UNTOUCHED && "Arrows--step__untouched", step.state === StepState.SKIPPED && "Arrows--step__skipped", step.state === StepState.DONE && "Arrows--step__done", step.state === StepState.INVALID && "Arrows--step__invalid");
     return react.createElement(
       "div",
       { key: index, className: classnames("Arrows--step", modifiersClasses) },

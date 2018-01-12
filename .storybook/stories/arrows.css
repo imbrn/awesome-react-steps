@@ -49,3 +49,23 @@
   color: #000;
   opacity: 0.5;
 }
+
+.CustomStates {
+  background: whitesmoke;
+}
+.CustomStates .Arrows--step--label {
+  color: black;
+  opacity: 0.5;
+}
+.CustomStates .Arrows--step__skipped .Arrows--step--arrow {
+  fill: lightgrey;
+  opacity: 0.35;
+}
+.CustomStates .Arrows--step__invalid .Arrows--step--arrow {
+  fill: red;
+  opacity: 0.25;
+}
+.CustomStates .Arrows--step__done .Arrows--step--arrow {
+  fill: lime;
+  opacity: 0.25;
+}

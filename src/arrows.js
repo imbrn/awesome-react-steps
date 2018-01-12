@@ -1,5 +1,5 @@
 import React from "react";
-import Model from "./model";
+import Model, { StepState } from "./model";
 import classnames from "classnames";
 import uniqueId from "lodash.uniqueid";
 
@@ -16,7 +16,11 @@ const Arrows = ({
     const modifiersClasses = classnames(
       model.current === index && "Arrows--step__current",
       model.current > index && "Arrows--step__passed",
-      model.current < index && "Arrows--step__coming"
+      model.current < index && "Arrows--step__coming",
+      step.state === StepState.UNTOUCHED && "Arrows--step__untouched",
+      step.state === StepState.SKIPPED && "Arrows--step__skipped",
+      step.state === StepState.DONE && "Arrows--step__done",
+      step.state === StepState.INVALID && "Arrows--step__invalid"
     );
     return (
       <div key={index} className={classnames("Arrows--step", modifiersClasses)}>

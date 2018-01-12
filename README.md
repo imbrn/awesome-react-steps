@@ -159,9 +159,19 @@ The classes for the states of the stepper. You can combine these one with the cl
 /* Steps after the current step */
 .Arrows--step__coming {
 }
-```
 
-> It's not implemented classes for step states in the Arrows stepper component yet.
+/* Invalid step */
+.Arrows--step__invalid {
+}
+
+/* Step is done */
+.Arrows--step__done {
+}
+
+/* Step was skipped */
+.Arrows--step__skipped {
+}
+```
 
 ## Contributing
 
