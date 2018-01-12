@@ -103,28 +103,41 @@ The classes used for each part of the stepper:
 
 ```css
 /* The root element of the Arrows stepper. The background should be customized in this class.  */
-.Arrows
+.Arrows {
+}
 
 /* The element which holds a step */
-.Arrows--step
+.Arrows--step {
+}
 
 /* The SVG element used to draw the arrow in the background of each step */
-.Arrows--step--arrow
+.Arrows--step--arrow {
+}
 
 /* The elements for the number and the label of each step */
-.Arrows--step--number
-.Arrows--step--label
+.Arrows--step--number {
+}
+.Arrows--step--label {
+}
 ```
 
 The classes for the states of the stepper. You can combine these one with the classes of the stepper parts to custom the rendering style for different states of the stepper.
 
 ```css
-.Arrows--step__current /* Current step */
-.Arrows--step__passed /* Steps before the current step */
-.Arrows--step__coming;; /* Steps after the current step */
+/* Current step */
+.Arrows--step__current {
+}
+
+/* Steps before the current step */
+.Arrows--step__passed {
+}
+
+/* Steps after the current step */
+.Arrows--step__coming {
+}
 ```
 
-> We haven't implemented classes for step states in the Arrows stepper component.
+> It's not implemented classes for step states in the Arrows stepper component yet.
 
 ## Contributing
 
