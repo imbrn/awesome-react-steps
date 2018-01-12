@@ -12,6 +12,8 @@ A set of steppers components for you to use in your react projects.
 ![custom dark](./docs/screenshots/arrows/dark.png)
 ![custom dark](./docs/screenshots/arrows/red.png)
 
+> It's only implemented Arrows stepper util now, but more steppers will be available soon. :)
+
 ## Quick usage
 
 The quickest way for you to use a stepper component in your project is by using a package manager to install it, and a ES6 ready environment.
@@ -22,48 +24,25 @@ npm install awesome-react-steps
 yarn add awesome-react-steps
 ```
 
-Import the stepper you want, its styles, and the model class.
-
-> We have implemented only the Arrows stepper, but more steppers will be available soon. :)
-
 ```js
-import "./node_modules/awesome-react-steps/dist/awesome-react-steps.css";
-import { Arrows, Model, StepState } from "awesome-react-steps";
+import "./node_module/awesome-react-steps/lib/css/arrows.css";
+import { Arrows } from "awesome-react-steps";
+
+//...
+
+<Arrows
+  model={{
+    steps: [
+      { label: "Step one" },
+      { label: "Step two" },
+      { label: "Step three" }
+    ],
+    current: 0
+  }}
+>
 ```
 
-Create the object model for your stepper component and manage it in your container state.
-This object is immutable but it provides a lot of functions for you to generate the next state easily:
-
-```js
-const model = new Model({
-  steps: [
-    { label: "First step" },
-    { label: "Step two" },
-    { label: "Final step" }
-  ]
-});
-```
-
-> Initially all steps are in an `UNTOUCHED` state, but you can specify any state you want for each step
-
-> Each stepper can render its steps differently based on these states.
-
-Include your stepper in your container:
-
-```html
-<Arrows model={model} />
-```
-
-And then change its model to render the state you need.
-
-```js
-model = model
-  .skip() // sets the current step state to SKIPPED
-  .next() // advance to the next step
-  .done(); // sets it to DONE state
-
-// Then updates your container state with the new model
-```
+## Advanced usage
 
 ## Coming features
 
@@ -142,7 +121,7 @@ The classes for the states of the stepper. You can combine these one with the cl
 ```css
 .Arrows--step__current /* Current step */
 .Arrows--step__passed /* Steps before the current step */
-.Arrows--step__coming /* Steps after the current step */
+.Arrows--step__coming;; /* Steps after the current step */
 ```
 
 > We haven't implemented classes for step states in the Arrows stepper component.
