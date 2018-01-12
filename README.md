@@ -39,7 +39,7 @@ import { Arrows } from "awesome-react-steps";
     ],
     current: 0
   }}
->
+/>;
 ```
 
 ## Advanced usage
