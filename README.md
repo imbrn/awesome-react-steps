@@ -58,7 +58,7 @@ import { StepsModel } from "awesome-react-steps";
 
 #### Constructing
 
-Initially empty and populating it later:
+Without arguments:
 
 ```js
 let model = new StepsModel();
