@@ -46,7 +46,7 @@ import { Arrows } from "awesome-react-steps";
 
 In a real project you won't actually use the quick example as shown above, you will probably use it inside a container component, for managing its state.
 
-In this situation you better chose `StepsModel` object instead of plain Javascript object, because it provides some API for you to mutate your state easily.
+In this situation you better choose `StepsModel` object instead of plain Javascript object, because it provides some API for you to mutate your state easily.
 
 ```js
 import React from "react";
