@@ -42,6 +42,53 @@ import { Arrows } from "awesome-react-steps";
 />;
 ```
 
+## Within a container
+
+In a real project you won't actually use the quick example as shown above, you will probably use it inside a container component, for managing its state.
+
+In this situation you better chose `StepsModel` object instead of plain Javascript object, because it provides some API for you to mutate your state easily.
+
+```js
+import React from "react";
+import { Arrows, StepsModel } from "awesome-react-steps";
+
+class MyContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stepsModel: new StepsModel([
+        { label: "Step one" },
+        { label: "Second step" },
+        { label: "Another step" },
+        { label: "Last step" }
+      ])
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <Arrows model={this.state.stepsModel} />
+        <button onClick={this.back.bind(this)}>Back</button>
+        <button onClick={this.advance.bind(this)}>Advance</button>
+      </div>
+    );
+  }
+
+  advance() {
+    this.setState(prevState => ({
+      stepsModel: prevState.stepsModel.next()
+    }));
+  }
+
+  back() {
+    this.setState(prevState => ({
+      stepsModel: prevState.stepsModel.previous()
+    }));
+  }
+}
+```
+
 ## Advanced usage
 
 ## Coming features

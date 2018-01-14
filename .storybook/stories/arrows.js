@@ -3,12 +3,12 @@ import { storiesOf } from "@storybook/react";
 import Arrows from "../../src/arrows";
 import "../../styles/arrows.css";
 import "./arrows.css";
-import Model, { StepState } from "../../src/model";
+import StepsModel, { StepState } from "../../src/model";
 
 storiesOf("Arrows", module).add("default", () => (
   <Arrows
     model={
-      new Model({
+      new StepsModel({
         steps: [
           { label: "First step" },
           { label: "Step two" },
@@ -96,3 +96,46 @@ storiesOf("Arrows", module).add("with custom states", () => (
     }}
   />
 ));
+
+storiesOf("Arrows", module).add(
+  "inside container",
+  () => {
+    class MyContainer extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          stepsModel: new StepsModel([
+            { label: "Step one" },
+            { label: "Second step" },
+            { label: "Another step" },
+            { label: "Last step" }
+          ])
+        };
+      }
+
+      render() {
+        return (
+          <div>
+            <Arrows model={this.state.stepsModel} />
+            <button onClick={this.back.bind(this)}>Back</button>
+            <button onClick={this.advance.bind(this)}>Advance</button>
+          </div>
+        );
+      }
+
+      advance() {
+        this.setState(prevState => ({
+          stepsModel: prevState.stepsModel.next()
+        }));
+      }
+
+      back() {
+        this.setState(prevState => ({
+          stepsModel: prevState.stepsModel.previous()
+        }));
+      }
+    }
+
+    return <MyContainer />;
+  }
+);
