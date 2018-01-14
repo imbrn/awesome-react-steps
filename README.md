@@ -12,7 +12,7 @@ A set of steppers components for you to use in your react projects.
 ![custom dark](./docs/screenshots/arrows/dark.png)
 ![custom dark](./docs/screenshots/arrows/red.png)
 
-> It's only implemented Arrows stepper util now, but more steppers will be available soon. :)
+> It's only implemented Arrows stepper until now, but more steppers will be available soon. :)
 
 ## Quick usage
 
@@ -175,7 +175,7 @@ The classes for the states of the stepper. You can combine these one with the cl
 
 ## Contributing
 
-Open an issue if you encounter a bug or want some new feature. We will apreciate if you write us some pull requests too.
+Open an issue if you encounter a bug or want some new feature. We will appreciate if you write us some pull requests too.
 
 ## License
 
