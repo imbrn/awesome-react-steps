@@ -89,8 +89,6 @@ class MyContainer extends Component {
 }
 ```
 
-## Advanced usage
-
 ## Coming features
 
 * New steppers types
