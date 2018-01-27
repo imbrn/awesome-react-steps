@@ -89,10 +89,6 @@ class MyContainer extends Component {
 }
 ```
 
-## Coming features
-
-* New steppers types
-
 ## API
 
 ### StepsModel class
@@ -217,6 +213,10 @@ The classes for the states of the stepper. You can combine these one with the cl
 .Arrows--step__skipped {
 }
 ```
+
+## Coming features
+
+* New steppers types
 
 ## Contributing
 
