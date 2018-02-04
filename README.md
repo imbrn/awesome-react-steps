@@ -42,11 +42,13 @@ import { Arrows } from "awesome-react-steps";
 />;
 ```
 
-## Within a container
+## Within a controlled container
 
-In a real project you won't actually use the quick example as shown above, you will probably use it inside a container component, for managing its state.
+In a real project you won't actually use the quick example as shown above, you will probably use it inside a container component, for controlling state.
 
 In this situation you better choose `StepsModel` object instead of plain Javascript object, because it provides some API for you to mutate your state easily.
+
+> `StepsModel` is immutable, its mutation functions will return new objects. You need to capture the return value and change your application state with it.
 
 ```js
 import React from "react";
