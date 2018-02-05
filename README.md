@@ -12,7 +12,7 @@ A set of steppers components for you to use in your react projects.
 ![custom dark](./docs/screenshots/arrows/dark.png)
 ![custom dark](./docs/screenshots/arrows/red.png)
 
-> It's only implemented Arrows stepper until now, but more steppers will be available soon. :)
+> It's implemented only the Arrows stepper until now, but more steppers will be available soon. :)
 
 ## Quick usage
 
