@@ -226,4 +226,5 @@ Open an issue if you encounter a bug or want some new feature. We will appreciat
 
 ## License
 
-MIT License
+[MIT License](https://opensource.org/licenses/MIT) 
+
