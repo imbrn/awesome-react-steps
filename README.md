@@ -29,7 +29,7 @@ yarn add awesome-react-steps
 ```
 
 ```js
-import "./node_module/awesome-react-steps/lib/css/arrows.css";
+import "./node_modules/awesome-react-steps/lib/css/arrows.css";
 import { Arrows } from "awesome-react-steps";
 
 //...
